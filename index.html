@@ -118,6 +118,7 @@
 
     function initBingo() {
       bingoCache.currentIndex = 0;
+      bingoCache.currentPlay = [];
       bingoCache.numbers = generateUniqueBingoNumbers(75);
       saveBingoCache();
     }
