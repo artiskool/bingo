@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bingo Number Generator</title>
+  <script>
+    // Function to generate random Bingo number
+    function generateBingoNumber() {
+      return Math.floor(Math.random() * 75) + 1;
+    }
+
+    // Function to read out Bingo number using Web Speech API
+    function readBingoNumber(number) {
+      const utterance = new SpeechSynthesisUtterance(number);
+      speechSynthesis.speak(utterance);
+    }
+
+    // Main program loop
+    function main() {
+      // Generate and read out 3 Bingo numbers
+      for (let i = 0; i < 3; i++) {
+        const number = generateBingoNumber();
+        readBingoNumber(number);
+        document.writeln(number);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Bingo Number Generator</h1>
+  <button onclick="main()">Generate Numbers</button>
+</body>
+</html>
